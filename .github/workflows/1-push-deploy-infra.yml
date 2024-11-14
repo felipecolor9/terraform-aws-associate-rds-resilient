@@ -27,8 +27,8 @@ jobs:
             terraform plan
             sleep 10
             terraform apply -auto-approve
-            echo "the resources has been successfully applied!"
-            sleep 10
+            echo "the resources has been successfully applied! 1 minute left to check your resources..."
+            sleep 60
             echo "destroying resources..."
             terraform destroy -auto-approve
             echo "the resources has been successfully destroyed!"
