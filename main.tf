@@ -28,6 +28,8 @@ provider "aws" {
 }
 
 module "rds" {
+  depends_on = [module.secrets]
+
   source              = "./modules/rds"
   password_secret_arn = module.secrets[0].secret_rds_psw_arn_output
   custom_password     = var.custom_db_password
